@@ -1,0 +1,27 @@
+import express from 'express';
+
+const app = express();
+const PORT = 3000;
+
+app.get('/', (req, res) => {
+  res.json({
+    message: "Hello! Server is alive",
+    time: new Date().toISOString(),
+    query: req.query
+  });
+});
+
+app.get('/ping', (req, res) => {
+  res.json({ status: 'ok', pong: true });
+});
+
+app.get('/test/:id', (req, res) => {
+  res.json({
+    receivedId: req.params.id,
+    message: `You asked for item #${req.params.id}`
+  });
+});
+
+app.listen(PORT, () => {
+  console.log(`🚀 Server running → http://localhost:${PORT}`);
+});
