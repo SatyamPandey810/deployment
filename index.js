@@ -1,7 +1,9 @@
 import express from 'express';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const app = express();
-const PORT = 8000;
+// const PORT = 8000;
 
 app.get('/', (req, res) => {
   res.json({
@@ -26,6 +28,6 @@ app.get('/test/:id', (req, res) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`🚀 Server running → http://localhost:${PORT}`);
+app.listen(process.env.PORT, () => {
+  console.log(`🚀 Server running → http://localhost:${process.env.PORT}`);
 });
