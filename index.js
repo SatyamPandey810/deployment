@@ -18,7 +18,7 @@ app.get('/ping', (req, res) => {
 });
 
 app.get('/test', (req, res) => {
-  res.json({ status: 'ok', test: true });
+  res.json({ status: 'ok', test: true,data:process.env.PORT });
 });
 
 app.get('/test/:id', (req, res) => {
