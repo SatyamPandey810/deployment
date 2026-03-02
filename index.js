@@ -15,6 +15,10 @@ app.get('/ping', (req, res) => {
   res.json({ status: 'ok', pong: true });
 });
 
+app.get('/test', (req, res) => {
+  res.json({ status: 'ok', test: true });
+});
+
 app.get('/test/:id', (req, res) => {
   res.json({
     receivedId: req.params.id,
